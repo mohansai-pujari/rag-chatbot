@@ -4,7 +4,7 @@ A Streamlit-based Retrieval-Augmented Generation (RAG) chatbot to interact with 
 
 -----Setup Instructions:---------------------------------------------------------------------------
     - Clone the repository:
-        - git clone <repo-url> && cd rag-chatbot
+        - git clone https://github.com/mohansai-pujari/rag-chatbot.git && cd rag-chatbot
     - Run the setup script:
         - ./setup.sh
     - Add your API key in the config.properties file before running the application:
