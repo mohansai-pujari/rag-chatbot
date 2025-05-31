@@ -1,0 +1,6 @@
+langchain
+streamlit
+faiss-cpu
+unstructured
+pdfminer.six
+python-docx
