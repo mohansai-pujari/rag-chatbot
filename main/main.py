@@ -50,14 +50,14 @@ def main():
 
         link_option = st.radio(
             "How would you like to include web links?",
-            ("Don't use any links", "Use sample links", "Enter custom links"),
+            ("Don't use any links", "Use sample AngleOne links", "Enter custom links"),
             index=0,
             key="link_choice"
         )
 
         # Step 2: Let user confirm next step explicitly
-        if link_option == "Use sample links":
-            if st.button("Use Sample Links"):
+        if link_option == "Use sample AngleOne links":
+            if st.button("Use Sample AngleOne Links"):
                 urls = [url.strip() for url in SAMPLE_ANGEL_ONE_WEB_LINKS.split(",")]
                 all_links.update(urls)
                 st.session_state.proceed_links = True
