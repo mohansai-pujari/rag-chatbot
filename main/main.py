@@ -109,15 +109,18 @@ def main():
     if all_docs and not st.session_state.chunks:
         st.info("Processing documents and webpages...")
 
-        chunks = TextProcessor.split_documents(all_docs, CHUNK_SIZE, CHUNK_OVERLAP)
-        st.session_state.chunks = chunks
+        with st.spinner("Splitting documents..."):
+            chunks = TextProcessor.split_documents(all_docs, CHUNK_SIZE, CHUNK_OVERLAP)
+            st.session_state.chunks = chunks
 
-        store = VectorStore()
-        store.create_store(chunks)
-        st.session_state.vector_store = store
+        with st.spinner("Creating vector store..."):
+            store = VectorStore()
+            store.create_store(chunks)
+            st.session_state.vector_store = store
 
-        llm = LLMModel(gemini_api_key=GEMINI_API_KEY, model_name=MODEL_NAME)
-        st.session_state.llm = llm
+        with st.spinner("Initializing LLM model..."):
+            llm = LLMModel(gemini_api_key=GEMINI_API_KEY, model_name=MODEL_NAME)
+            st.session_state.llm = llm
 
     if st.session_state.vector_store and st.session_state.llm:
         question = st.text_input("Ask a question:")
