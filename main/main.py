@@ -5,7 +5,6 @@ import streamlit as st
 st.set_page_config(page_title="RAG Chatbot")
 
 from langchain.schema import Document
-
 from llm.model import LLMModel
 from llm.prompt import PromptBuilder
 from processor.text_processor import TextProcessor
@@ -15,7 +14,6 @@ from utils.config import TOP_K, CHUNK_SIZE, CHUNK_OVERLAP, GEMINI_API_KEY, MODEL
 from utils.web_scraper import WebScraper
 import sys
 import asyncio
-
 
 
 try:
@@ -28,8 +26,29 @@ if sys.version_info >= (3, 13):
     st.warning("Python 3.13 is not fully supported. Please downgrade to Python 3.10 or 3.11 for full compatibility.")
 
 def main():
-    # st.set_page_config(page_title="RAG Chatbot")
     st.title("RAG Chatbot: Ask Your Docs!")
+
+    st.subheader("Enter your Gemini AI API Key to continue")
+    st.markdown(
+        """
+        - Get your API key from: [Generate API Key](https://makersuite.google.com/app/apikey)
+        """
+    )
+
+    user_api_key = st.text_input("Enter your Gemini API Key", type="password")
+
+    if not user_api_key:
+        st.warning("Please enter your Gemini API Key or type `bypass` to proceed.")
+        st.stop()
+
+    if user_api_key.lower() == "bypass":
+        api_key = GEMINI_API_KEY
+        st.success("Bypass enabled. Using local config key.")
+    else:
+        api_key = user_api_key
+        st.success("Using your provided API key.")
+
+    st.session_state.gemini_api_key = api_key
 
     uploaded_files = st.file_uploader(
         "Upload PDF/DOC/DOCX files",
@@ -119,7 +138,7 @@ def main():
             st.session_state.vector_store = store
 
         with st.spinner("Initializing LLM model..."):
-            llm = LLMModel(gemini_api_key=GEMINI_API_KEY, model_name=MODEL_NAME)
+            llm = LLMModel(gemini_api_key=st.session_state.gemini_api_key, model_name=MODEL_NAME)
             st.session_state.llm = llm
 
     if st.session_state.vector_store and st.session_state.llm:
