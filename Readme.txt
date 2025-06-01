@@ -1,10 +1,11 @@
 RAG Chatbot: Ask Your Docs!
 
-A Streamlit-based Retrieval-Augmented Generation (RAG) chatbot to interact with text based documents and web content using an LLM backend.
+A Streamlit-based Retrieval-Augmented Generation (RAG) chatbot to interact with text-based documents and web content using an LLM backend.
 
 -----Setup Instructions:---------------------------------------------------------------------------
     - Clone the repository:
-        - git clone https://github.com/mohansai-pujari/rag-chatbot.git && cd rag-chatbot
+        - git clone https://github.com/mohansai-pujari/rag-chatbot.git
+        - cd rag-chatbot
     - Run the setup script:
         - ./setup.sh
     - Add your API key in the config.properties file before running the application:
@@ -31,7 +32,7 @@ A Streamlit-based Retrieval-Augmented Generation (RAG) chatbot to interact with 
         - CHUNK_SIZE, CHUNK_OVERLAP: For text chunking.
         - SAMPLE_ANGEL_ONE_WEB_LINKS: Optional sample URLs to scrape.
         - MODEL_NAME, GEMINI_API_KEY: LLM and credentials.
-    - Important: You must add your own GEMINI_API_KEY before launching the application.
+    - Important: You must add your GEMINI_API_KEY before launching the application.
 
 -----Maintainer:-----------------------------------------------------------------------------------
 Mohan Sai Pujari
