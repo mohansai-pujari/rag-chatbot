@@ -1,9 +1,9 @@
-from langchain.vectorstores import FAISS
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain_community.embeddings import HuggingFaceEmbeddings
 
 class VectorStore:
     def __init__(self):
-        self.embedding_model = HuggingFaceEmbeddings()
+        self.embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
         self.store = None
 
     def create_store(self, documents):
