@@ -37,3 +37,8 @@ A Streamlit-based Retrieval-Augmented Generation (RAG) chatbot to interact with 
 -----Maintainer:-----------------------------------------------------------------------------------
 Mohan Sai Pujari
 Software Development Engineer
+mohansai.pujari@gmail.com
+https://www.linkedin.com/in/mohan-sai-pujari/
+
+
+For Documentation and Architecture, check this link: https://docs.google.com/document/d/1oW_xQL39K3A0J2gX9EMOnBVbEmWjnsQogpVQ7fO19VQ/edit?usp=sharing
