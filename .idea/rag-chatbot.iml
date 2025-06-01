@@ -4,7 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venev_rag_bot" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.13 virtualenv at ~/Downloads/Projects/rag-chatbot/venev_rag_bot" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.11 virtualenv at ~/Downloads/Projects/rag-chatbot/venv_rag_bot" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

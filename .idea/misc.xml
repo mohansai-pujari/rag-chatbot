@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.13 virtualenv at ~/Downloads/Projects/rag-chatbot/venev_rag_bot" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 virtualenv at ~/Downloads/Projects/rag-chatbot/venev_rag_bot" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 virtualenv at ~/Downloads/Projects/rag-chatbot/venv_rag_bot" project-jdk-type="Python SDK" />
 </project>
